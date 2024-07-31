@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: aqua;
+                transition: .5s ease-in-out; 
+            }
+            .clas{
+                border-radius: 50%;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div">
+
+        </div>
+        <script>
+            let d=document.body.getElementsByTagName("div")
+            d[0].addEventListener("click",()=>{
+                d[0].classList.toggle("clas")//pops and appends alternatively
+            })
+        </script>
+    </body>
+</html>

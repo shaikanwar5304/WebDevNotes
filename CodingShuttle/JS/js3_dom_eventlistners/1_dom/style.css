@@ -1,0 +1,12 @@
+.container {
+  width: 430px;
+  background-color: rgb(255, 219, 173);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  gap: 10px;
+}
+.container .box {
+  height: 100px;
+  background-color: rgb(159, 255, 217);
+  color: rgb(86, 86, 86);
+}

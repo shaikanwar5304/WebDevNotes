@@ -1,0 +1,15 @@
+*{
+    margin: 0px;
+}
+#nav{
+    width: 100vw;
+    height: 100px;
+    background-color:black;
+    position: fixed;
+}
+#forH{
+    width: 100px;
+    height: 1500px;
+    background-color: aliceblue;
+    background-image: linear-gradient(rgb(169, 255, 136),rgb(165, 227, 255),rgb(255, 226, 164));
+}

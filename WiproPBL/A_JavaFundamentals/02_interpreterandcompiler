@@ -1,0 +1,4 @@
+interpreter is used to start the program quickly 
+where as compiler takes time in compiling the code but the machine code executes faster than interpreter
+so for a good start interpreter is used
+and if there is frequently used part of the code it compiles that part 

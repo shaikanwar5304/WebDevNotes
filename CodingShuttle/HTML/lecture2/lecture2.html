@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture2</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>My favorite food items</h2>
+    <ul>
+      <li>kadhai paneer</li>
+      <ol>
+        <li>butter paneer</li>
+        <li>normal paneer</li>
+      </ol>
+      <li>Butter naan</li>
+      <li>malai kofta</li>
+    </ul>
+
+    <ol>
+      <li>kadhai paneer</li>
+      <li>Butter naan</li>
+      <li>malai kofta</li>
+    </ol>
+    <hr />
+    <br />
+    <hr />
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th colspan="2">Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>anwar</td>
+          <td>47</td>
+          <td rowspan="4">49</td>
+        </tr>
+        <tr>
+          <td>nafeesa</td>
+          <td colspan="">40</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">total</td>
+          <td colspan="3">87</td>
+          <td>49</td>
+        </tr>
+      </tfoot>
+    </table>
+    <hr />
+    <table>
+      <colgroup>
+        <col style="background-color: lightblue" />
+        <col style="background-color: red" />
+      </colgroup>
+      <tr>
+        <td colspan="3">2022</td>
+      </tr>
+      <tr>
+        <td>empty</td>
+        <td>empty</td>
+        <td>empty</td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="2">FIESTA</td>
+        <td>empty</td>
+      </tr>
+      <tr>
+        <td>empty</td>
+      </tr>
+      <tr>
+        <td>empty</td>
+        <td>empty</td>
+        <td>empty</td>
+      </tr>
+    </table>
+    <hr />
+    <br />
+    <hr />
+    <img
+      src="https://via.placeholder.com/400x200"
+      alt=""
+      srcset="
+        https://via.placeholder.com/300x200 1x,
+        https://via.placeholder.com/400x200 2x
+      "
+    />
+    <hr />
+    <br />
+    <hr />
+    <h3>
+      when below 400px the image gets 100vw, when between 400 to 500px it gets
+      50vw so the resultant will be 200 to 250px so 300X300 will be displayed
+    </h3>
+    <img
+      src="https://via.placeholder.com/200"
+      alt="placeholder"
+      srcset="
+        https://via.placeholder.com/300 300w,
+        https://via.placeholder.com/400 400w,
+        https://via.placeholder.com/500 500w
+      "
+      sizes="(max-width:400px) 100vw,(max-width:500px) 50vw,33vw"
+    />
+    <hr />
+    <img src="wrongurl" alt="usage of alt" />
+    <hr />
+    <h3>sizes are working only when srcset is applicable</h3>
+    <img
+      src="http://via.placeholder.com/400"
+      alt=""
+      sizes="(max-width:400px) 100vw,(max-width:500px) 50vw,33vw"
+    />
+  </body>
+</html>

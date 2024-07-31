@@ -1,0 +1,2 @@
+packages are like folders collection of classes and interfaces.
+java.util, java.lang, java.io, etcc... are some of the built-in packages.

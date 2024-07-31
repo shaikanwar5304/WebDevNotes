@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- in the browsers like microsoft while using srcset if the image of maximum size is loaded. then 
+       automatically even if we instructed to load the minimum size it will load the max size -->
+    <!-- use firefox to avoid this -->
+    <img
+      src="https://via.placeholder.com/200"
+      alt="placeholderimage"
+      title="to check the srcset width"
+      srcset="
+        https://via.placeholder.com/200 400w,
+        https://via.placeholder.com/300 600w
+      "
+    />
+    <!--the image getting 50vw for every
+       width even though it changes the image.
+        Use sizes to avoid this issue.-->
+    <hr />
+    <br /><br />
+    <img
+      src="https://via.placeholder.com/200"
+      alt="placeholderimage"
+      title="to check the dpr"
+      srcset="
+        https://via.placeholder.com/100 1x,
+        https://via.placeholder.com/200 2x,
+        https://via.placeholder.com/300 3x
+      "
+    />
+    <!-- in this case the image is having only 100px width at every scenario.
+    to avoid this use sizes -->
+    <hr />
+    <br />
+    <hr />
+     <div>
+    <img
+      alt="placeholderimage"
+      title="to check the sizes"
+      srcset="
+        https://via.placeholder.com/100 100w,
+        https://via.placeholder.com/200 200w,
+        https://via.placeholder.com/300 300w,
+        https://via.placeholder.com/400 400w
+      "
+      sizes="(max-width:300px) 50vw,
+             (max-width:600px) 250px,100vw"
+    />
+    <!-- here sizes work is to give upto 300px device width the img will get 50% of the view width as input. so for suppose 200 px is the device width then 100px is the widht got by the img tag so for 100px the image loads will be 100x100 -->
+    <hr>
+    <br>
+    <hr>
+    <h3>gallery</h3>
+   <div style="font-size: 0px">
+   <img src="https://via.placeholder.com/300" alt="">
+   <img src="https://via.placeholder.com/300" alt="">
+   <img src="https://via.placeholder.com/300" alt=""></div>
+   <!-- if we donot put the font size 0px then the enter key stroke we used to separate those tags is actually taking space like a font. so if there is 900px available still the images are not in one line may be at 906 px the extra space is taken by the enter-->
+    </div>
+  </body>
+</html>
