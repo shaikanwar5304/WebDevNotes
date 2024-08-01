@@ -1,3 +1,0 @@
-if there are two functions in main()
-then three class files one for main and two functions are created
-and then they will go to jvm

@@ -1,4 +1,0 @@
-//private -> accessable with in the class
-//protected -> curr package + with in subclass in any other package also
-//default -> with in the package
-//public -> accessable from any where

@@ -1,8 +1,0 @@
-a class contianing an abstract method should be declared as abstract
-
-we can have concrete methods in abstract class i.e normal methods with body
-
-you can't create object of abstract class
-
-the subclass of abstract should implement the abstract method or declare itself as abstract
-
