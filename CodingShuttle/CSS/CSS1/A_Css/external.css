@@ -1,0 +1,37 @@
+h1{
+    /*h1 is a element selector*/
+    font-size: 10px;
+}
+.classSelector{
+    background-color: black;
+}
+#idSelector{
+    color: white;
+}
+*{
+    font-style: oblique;
+}
+.classSelector, h3{
+    border: 2px solid blue;
+}
+header h1{
+    background-color: brown;
+    color: #ffddeeee;
+    /*red, green, blue, opacity*/
+}
+header h2{
+    background-color: rgb(23,200,34,.5);
+    /*opactiy: alpha : .5 */
+    color:rgb(126, 195, 255, 1);
+    border: 2px,hsl(347, 75%, 70%);
+
+    /*opacity 1 matlab completly visible
+      hsl(hue, saturation, lightness)
+      upto 360, upto 100, upto 100
+    */
+    width: 50%;
+    /* half the size of parent */
+}
+header{
+    width: 500px;
+}

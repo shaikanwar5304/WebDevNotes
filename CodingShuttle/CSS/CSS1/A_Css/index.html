@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="external.css">
+    <style>
+        h1{
+            color: rgb(243, 189, 108);
+            /* 
+            internal css
+            */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>h1 in header nested css</h1>
+        <h2>h2 in header</h2>
+    </header>
+    <h1 style="color: rgb(243, 189, 108);" >inline css</h1>
+    <h2 class="classSelector" id="idSelector">preference=> inline > internal, external</h2>
+    <h3>which comes last in internal and external will be preferred</h3>
+</body>
+</html>

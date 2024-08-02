@@ -1,0 +1,54 @@
+.box{
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    border:solid black 20px;
+    padding: 20px;/*20px to all the sides*/
+    padding-left: 50px;/*similarly for margin top right bottom left*/
+
+}
+.box2{
+    width: 100px;
+    height: 100px;
+    margin-inline:auto;/*total margin to two halves*/
+}
+.red{
+    background-color: red;
+    padding : 5px 25px; /*5 for top and bottom and 25 for left and right*/
+}
+.green{
+    background-color: green;
+    padding: 5px 15px 45px; /*5 for top 15 for left and right 45px for bottom*/
+}
+.blue{
+    background-color: blue;
+    padding: 5px 15px 45px 135px; /*top right bottom left*/
+}
+.boxsize1{
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;/*border and padding comes under the box the space left is given to content*/
+    /*if all of them milkar box ka size se bhi zyada hua tho size baad zayega(overflow)*/
+    background-color: aqua;
+    padding: 30px;
+    margin: 40px;
+    border: 10px solid black;
+}
+.boxsize2{
+    width: 100px;
+    height: 100px;
+    box-sizing: content-box;/*content is given full box dimensions*/
+    background-color: aqua;
+    padding: 30px;
+    margin: 40px;
+    border: 10px solid black;
+}
+.boxsize3{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    /*similar to content box*/
+    padding: 30px;
+    margin: 40px;
+    border: 10px solid black;
+}

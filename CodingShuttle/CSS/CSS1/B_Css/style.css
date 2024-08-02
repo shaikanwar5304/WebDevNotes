@@ -1,0 +1,27 @@
+.outer{
+    font-size: 50px;
+}
+
+.innerp1{
+    background-color: aquamarine;
+    width: 10em;/*em is the font size of the parent so width is 500px*/
+}
+.innerp2{
+    background-color: blue;
+    width: 10rem;/*rem is the font size of the root i.e (html) so width is 250px*/
+    /*if we didn't mention parent and root's font sizes it will take default sizes*/
+}
+html{
+    font-size: 25px;
+}
+
+.img-div{
+    width: 500px;
+    background-color: brown;
+}
+.first-img{
+    width: 10%;
+}
+.second-img{
+    width: 10vw;
+}
