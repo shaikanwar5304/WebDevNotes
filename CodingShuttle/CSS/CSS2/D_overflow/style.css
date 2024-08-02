@@ -1,0 +1,15 @@
+.textwrap{
+    border: 2px solid red;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+.textwrap1{
+    overflow: hidden;
+}
+.textwrap2{
+    overflow: auto;
+}
+.textwrap3{
+    overflow: scroll;
+}

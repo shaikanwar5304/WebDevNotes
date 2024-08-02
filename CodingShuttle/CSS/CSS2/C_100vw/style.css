@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body{
+    overflow: hidden;
+} */
+.all{
+    height: 100vh;
+    width: 100vw;
+}
+.top{
+    width: 100%;
+    height: 20%;
+    background-color: aqua;
+} 
+
+.left
+{
+    background-color: teal;
+    display: inline-block;
+    height: 80%;
+    width: 30%;
+}
+.right
+{
+    background-color: bisque;
+    display: inline-block;
+    height: 80%;
+    width: 70%;
+}

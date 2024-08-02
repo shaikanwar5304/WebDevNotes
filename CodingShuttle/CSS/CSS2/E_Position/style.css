@@ -1,0 +1,49 @@
+.container{
+    width: 1000px;
+    height: 600px;
+    overflow: scroll;
+    background-color: gray;
+}
+
+.inner-container{
+    width: 150%;
+    height: 150%;
+    margin: 100px;
+    margin-right: 1000px;
+    background-color: rgb(186, 154, 154);
+    position: relative;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(141, 224, 141);
+    overflow: auto;
+}
+
+.box1{
+    position: relative;
+    top: -100px;
+    left: 100px;
+    
+}
+.box2{
+    position: absolute;
+    top: 28px;
+    right: 28px;
+}
+.box5{
+    position: absolute;
+    top: 28px;
+    right: 28px;
+}
+.box3{
+    position: sticky;
+    top: 5px;
+    left: 5px;
+}
+
+.box4{
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      container
+      <div class="inner-container">
+        inner-container
+        <div class="box box1">
+            (relative to its original position wrt html order) <br>
+            position: relative; <br>
+            top: -100px; <br>
+            left: 100px; <br>
+            WILL LEAVE ITS SPACE IN THE FLOW
+        </div>
+        <div class="box box2">
+            position: absolute; <br>
+            top: 28px; <br>
+            right: 28px; <br>
+            (acc to the immediate parent's visible window part which is non static if not then acc to the body) <br>
+            WON'T LEAVE ITS SPACE IN THE FLOW
+        </div>
+        <div class="box box3">
+            position: sticky;
+            top: 5px;<br>
+            left: 5px; <br>
+            (works with nearest scrollable parent (coordinates are calculated with it(container))) <br>
+            (it will be inside immediate parent)
+        </div>
+        <div class="box box4">
+            (fixed wrt to window screen) <br>
+            position: fixed; <br>
+            bottom: 18px; <br>
+            right: 18px; <br>
+        </div>
+      </div>
+      <div class="box box5">
+        position: absolute; <br>
+        top: 28px; <br>
+        right: 28px; <br>
+        (as the immediate parent (container) is static, it will be acc to the body)
+      </div>
+      <div style="height: 500px;"></div>
+    </div>
+    <div style="height: 1000px"></div>
+  </body>
+</html>
