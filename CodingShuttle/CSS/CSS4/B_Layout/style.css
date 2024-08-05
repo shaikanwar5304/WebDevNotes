@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div{
+    border: 2px solid green;
+    padding: 10px;
+}
+.content{
+    display: flex;
+
+}
+.left{
+    flex-basis: 40%;
+}
+.right{
+    flex-basis: 60%;
+}
+.outerbox{
+    display: flex;
+    height: 200px;
+    background-color: wheat;
+    gap: 10px;/*gap won't change*/
+    flex-wrap: wrap;
+}
+.box{
+    background-color: lightblue;
+    padding: 10px;
+}
+#box-2{
+    /*shrinks if less space is provided*/
+    /* flex-basis: 300px; */
+    width: 300px;
+    flex-shrink: 1;
+}
