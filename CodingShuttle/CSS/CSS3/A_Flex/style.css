@@ -1,0 +1,40 @@
+.container{
+    border: 2px solid red;
+    display: flex;
+    height: 400px;
+    /* flex-wrap: wrap;
+    flex-direction: row; */
+    flex-flow: row ; 
+    /* justify-content: space-between;acc to x axis */
+     align-items:center;/* acc to y axis */
+    /*gap: 10px;/*always 10px gap between elements*/
+    /* align-content: space-around;
+    row-gap: 10px;
+    column-gap: 30px; */
+    /* gap: 30px 10px; */
+}
+.box{
+    border: 2px solid blue;
+    width: 100px;
+    /* height: 100px; */
+}
+#box-4{
+    order: 4;/*default value of order for all the boxes are 0 so now this box will come after the boxes of order less than it*/
+    /* flex-grow: 1;will occupy the space left */
+}
+#box-6{
+    order: 3;
+    /* flex-grow: 2;grows 2x than box-4 */
+}
+#box-7{
+    flex-shrink: 3;/*shrinks (compresses) 3x faster than others*/
+}
+#box-5{
+    /* flex-basis: 200px;in the direction of the flex-direction */
+}
+#box-2{
+    /* flex: 10 10 200px;flex-grow flex-shrink flex-basis */
+}
+#box-3{
+    align-self: stretch;/*will stretch the box to the height of the container*/
+}
