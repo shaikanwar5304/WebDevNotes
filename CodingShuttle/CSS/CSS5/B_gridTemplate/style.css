@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    background-color: lightcyan;
+    grid-template-areas: 'hd hd hd'
+                'sd main ad'
+                'ft ft ft';
+    grid-template-rows: 200px 200px 200px;
+}
+header{
+    background-color: lightcoral;
+    grid-area: hd;
+}
+.navigation{
+    background-color: lightgreen;
+    grid-area: sd;
+}
+main{
+    background-color: rgb(255, 255, 103);
+    grid-area: main;
+}
+.advertisement{
+    background-color: rgb(106, 106, 106);
+    grid-area: ad;
+}
+footer{
+    background-color: lightskyblue;
+    grid-area: ft;
+}

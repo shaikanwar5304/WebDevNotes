@@ -1,0 +1,41 @@
+/*always start with mobile*/
+body{
+    background-color: red;
+}
+h2, h3{
+    display: none;
+}
+
+/* min width  -> starts from
+   max width -> upto */
+
+/*for tablets after 640px*/
+@media screen and (min-width: 641px){
+    body{
+        background-color: green;
+    }
+    h1,h3{
+        display: none;
+    }
+    h2{
+        display: block;
+    }
+}
+/*for desktops after 1024px*/
+@media screen and (min-width: 1025px){
+    body{
+        background-color: blue;
+    }
+    h1,h2{
+        display: none;
+    }
+    h3{
+        display: block;
+    }
+}
+/*landscape: height < width*/
+@media screen and (orientation: landscape) and (max-height: 640px){
+    body{
+        background-color: yellow;
+    }
+}
