@@ -1,0 +1,50 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+div{
+    border: 2px solid red;
+}
+a:visited{
+    color: red;
+    
+}
+a:hover{
+    color: green;
+}
+li:first-child{
+    color: blue;
+}
+li:last-child{
+    color: yellow;
+}
+li:nth-child(2){
+    color: rgb(0, 255, 251);
+}
+li:nth-child(3){
+    color: rgb(255, 0, 255);
+}
+/*all even numbers*/
+li:nth-child(2n){
+    color: rgb(183, 66, 255);
+}
+/*all odd numbers*/
+li:nth-child(2n-1){
+    color: rgb(57, 97, 189);
+}
+p::first-line{/*always the first line irrespective of the length*/
+    color:rgb(0, 255, 251);
+    font-weight: bold;
+}
+p::first-letter{
+    font-size: 1.5rem;
+    color: rgb(5, 150, 31);
+}
+#befaft::before{
+    content: "Before";
+    color: rgb(227, 255, 71);
+}
+#befaft::after{
+    content: "After";
+    color: rgb(255, 0, 255);
+}

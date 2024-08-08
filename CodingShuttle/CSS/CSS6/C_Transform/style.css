@@ -1,0 +1,60 @@
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: #808080;
+    color:#f1f1f1;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+.original{       /*x and y*/  
+    transform: scale(.5,.5);
+    /* transform:  scaleX(1.5) scaleY(.5); same as above */
+
+    /* transform: skew(10deg); */
+    /*parallelogram of angle 80deg (imagine rectangle sliding over horizontal ie vertical sides are tilting 10deg)*/
+
+    /* transform: skew(0deg, 10deg); */
+    /*parallelogram of angle 80deg  (rectangle sliding over vertical i.e horizontal are tilting 10deg) */
+
+    /* transform: skew(40deg,10deg); */
+    /*parallelogram of angle 80deg  (vertical sides are tilting 40deg and horizontal sides are 10deg) */
+    background-color: purple;
+
+    /* transform: translate(100px, 50px); */
+    /*moves 100px right and 50px down */
+
+    /* transform: rotate(45deg); */
+    /*rotates 45deg clockwise */
+    
+    /* transform: rotateX(45deg); */
+    /*rotates 45deg clockwise along x-axis */
+
+    /* transform: rotateY(45deg); */
+    /*rotates 45deg clockwise along y-axis */
+
+    /* transform: rotateZ(45deg); */
+    /* rotates 45deg clockwise along z-axis which is actual rotate*/
+    transition: .5s cubic-bezier(0.42, 0, 0.55, 1.59) all ;
+    /*short hand for all transition properties below*/
+
+    /* transition-delay: 1s; */
+    /*the transition will start after 1s of hover */
+
+    /* transition-duration: 1s; */
+    /*the transition will take 1s to complete */
+
+    /* transition-property: transform, background-color; */
+    /*the transition will be applied to transform and background-color */
+    
+    /* transition-timing-function: ease-in; */
+    /*the transition will start slow and end fast */
+
+    /**cubic-bezier(0.42, 0, 0.55, 1.59) is the timing function taken from inspect tool*/
+    
+
+}
+.original:hover{
+    background-color: rgb(226, 98, 255);
+    transform: scale(1.5,1.5);
+}

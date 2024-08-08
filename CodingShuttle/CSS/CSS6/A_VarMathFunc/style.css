@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+:root{
+    --color: #565423;
+    --text-size:.3rem;
+    /*we can store anything*/
+    /*this is global variable*/
+}
+.container{
+    border: 2px solid red;
+    width: 100px;
+    aspect-ratio: 1/2;/*width and height 100px, 200px (can be strechable)*/
+    display: flex;
+    flex-wrap: wrap;
+}
+.box{
+    /*changing the color*/
+    --color:violet;
+    border: 2px solid var(--color);
+    display: inline-block;
+    width: calc(100%/3);
+    /* height: calc(100% - 50px); */
+    height: min(300px, calc(1000% - 50px));
+}
