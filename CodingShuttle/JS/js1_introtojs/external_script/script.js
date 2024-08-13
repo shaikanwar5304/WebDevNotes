@@ -16,7 +16,7 @@ console.log(x, typeof x); //34 'number'
 x = Boolean("string");
 console.log(x, typeof x); //true 'boolean'
 x++;
-console.log(x);
+console.log(x);//2
 x = prompt("enter your name:");
 console.log("hello " + x);
 alert('this is alert')

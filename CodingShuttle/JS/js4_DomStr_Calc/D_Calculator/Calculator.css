@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.container{
+    max-width: 280px;
+    margin: 60px auto;
+}
+.number-input{
+    width: 100%;
+    padding: 20px 10px;
+    background-color: black;
+    font-family: monospace;
+    color: white;
+    font-size: 3rem; 
+    text-align: end;
+    border: none;
+}
+.buttons-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.button{
+    background-color: #ccc;
+    border: 2px solid black;
+    padding-block: 12px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #f1f1f1;
+}
+.orange{
+    background-color: #f1a33c;
+}
+.span-2{
+    grid-column: span 2;
+}
+.span-3{
+    grid-column: span 3;
+}

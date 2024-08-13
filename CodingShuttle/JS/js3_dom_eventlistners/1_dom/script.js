@@ -2,7 +2,7 @@ let box1 = document.getElementById("box-1"); //<div class="box" id="box-1">box-1
 let divs = document.getElementsByTagName("div"); /*HTMLCollection(10)*/
 let cont = document.getElementsByClassName("container"); //HTMLCollection [div.container]
 var box3 = document.querySelector(".container #box-3"); //<div class="box" id="box-3">box-3</div>
-var box = document.querySelector(".box"); //<div class="box" id="box-1">box-1</div>
+var box = document.querySelector(".box"); //<div class="box" id="box-1">box-1</div> (gives first element)
 var allbox = document.querySelectorAll(".box"); //NodeList(7)
 var divincont = document.querySelectorAll(".container div"); //NodeList(7)
 document.querySelector(".container #box-3").innerHTML = "this is box-3";

@@ -13,8 +13,8 @@ console.log(arr.indexOf('Elephant'))//1
 arr.splice(3,1)
 console.log(arr);//[ 'Anwar', 'Elephant', 'Yellow', 'zebra' ]
 //replacing
-arr.splice(1,3,'siva sai','bhavana','manohar','joy')
-console.log(arr);//[ 'Anwar', 'siva sai', 'bhavana', 'manohar', 'joy' ]
+arr.splice(1,3,'siva sai','bhavana')
+console.log(arr);//[ 'Anwar', 'siva sai', 'bhavana' ]
 //inserting 
 arr.splice(1,0,'jagadeesh');
 console.log(arr);//[ 'Anwar', 'jagadeesh', 'siva sai', 'bhavana', 'manohar', 'joy' ]

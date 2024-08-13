@@ -7,6 +7,8 @@ console.log(container.classList); //DOMTokenList [value: '']
 
 container.classList.add("class1");
 console.log(container.classList); //DOMTokenList ['class1', value: 'class1']
+container.classList.add("class2");
+console.log(container.classList); //DOMTokenList ['class1', 'class2', value: 'class1 class2']
 
 container.classList.remove("class1");
 console.log(container.classList); //DOMTokenList [value: '']
