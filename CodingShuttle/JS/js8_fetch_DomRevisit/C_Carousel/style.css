@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel{
+    width: 75%;
+    aspect-ratio: 16/9;
+    position: relative;
+    overflow: hidden;
+}
+.arrow{
+    height: 100%;
+    width: 15%;
+    font-size: 3rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+/* while not having top =0 the top is 100% as it was overflowing (need to verify again) */
+.leftarr{
+left: 0;
+top: 0;
+display: none;
+}
+.rightarr{
+    top: 0;
+    right: 0;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+.carouselimages{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
