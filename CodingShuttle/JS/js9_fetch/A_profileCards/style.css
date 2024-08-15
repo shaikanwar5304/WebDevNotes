@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 75%;
+    display: grid;
+    overflow: hidden;
+    gap: 1%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1/2;
+    animation: anim 60s infinite cubic-bezier(0.66, 0.3, 0.3, 0.66) normal;
+}
+img{
+    width: 100%;
+    background-color: rgb(225, 225, 225);
+
+}
+.details{
+    border: 10px solid rgb(255, 226, 230);
+    aspect-ratio: 1/1;
+    background-color: rgb(255, 226, 230);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+.detail{
+    width: 100%;
+}

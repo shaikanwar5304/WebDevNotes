@@ -1,7 +1,8 @@
 async function fetchData(){
     resp = await fetch("https://dummyjson.com/products/1");
+    if(resp.statusText=="OK"){
     jsonData = await resp.json() 
-    return jsonData
+    return jsonData}
 }
 fetchData().then((res)=>{
   console.log(res);
