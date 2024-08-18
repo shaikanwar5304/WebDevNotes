@@ -2,6 +2,9 @@ let child=document.body.getElementsByClassName("child")
 let parent=document.body.getElementsByClassName("parent")
 let grandparent=document.body.getElementsByClassName("grandparent")
 let text= document.createElement("h1");
+let notPresent = document.getElementById("unknown")
+console.log(notPresent);//null
+
 document.body.append(text);
 let s = '';
 let flag= false;

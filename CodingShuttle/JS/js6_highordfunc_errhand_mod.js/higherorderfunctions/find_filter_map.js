@@ -1,7 +1,8 @@
-a = [1, 2, 3, 4, 5];
+let a = [1, 2, 3, 4, 5];
 
 //filter is used to select elements
 let evennumbers;
+let s= ""
 evennumbers=a.filter((elemt,ind,arr)=>{
   elemt % 2 == 0 ? (s = "yes") : (s = false);
   //console.log(evennumbers);undefined(5)
@@ -11,8 +12,8 @@ evennumbers=a.filter((elemt,ind,arr)=>{
 console.log(evennumbers);//[ 2, 4 ]
 
 //map is used to perform operations on each element
-doublethenumbers=a.map((e,i,a)=>{
-    return e*2
+let doublethenumbers=a.map((e,i,a)=>{
+   return e*2
 })
 console.log(doublethenumbers);//[ 2, 4, 6, 8, 10 ]
 
@@ -24,7 +25,7 @@ a = [
   { name: "seshadri", age: 17 },
   { name: "gowtham", age: 15 }
 ];
-e=a.find((e,i,a)=>{
+let e=a.find((e,i,a)=>{
     if (e.name =='gowtham'){
         return 1;
     }

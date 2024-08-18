@@ -27,3 +27,8 @@ arr.forEach(newfunc)
 */
 console.log(newfunc);//[Function: newfunc]
 console.log(func);//[Function: func]
+newarr=[]
+newarr.push(arr.forEach((elem)=>{
+    return elem+" newarr"//forEach won't care about the return element it just performs the function
+}))
+console.log(newarr);

@@ -1,0 +1,9 @@
+.Card{
+  background-color: rgb(175, 218, 255);
+  border: 2px solid red;
+  margin: 20px;
+}
+.container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
