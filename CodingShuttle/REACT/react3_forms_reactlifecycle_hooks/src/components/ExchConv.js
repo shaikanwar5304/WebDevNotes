@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import DropDown from "./DropDown";
 import "./ExchConv.css";
+import { BsCashCoin } from "react-icons/bs";
 function ExchConv() {
   const [menu, setMenu] = useState();
   const [num, setNum] = useState(1);
@@ -40,8 +41,10 @@ function ExchConv() {
   return (
     <div>
       {console.log("inside original comp")}
+      <BsCashCoin />
       <input
-        type="number" value={num}
+        type="number"
+        value={num}
         onChange={(e) => {
           console.log("before num");
           setNum(e.target.value);
@@ -50,8 +53,8 @@ function ExchConv() {
       />
       <DropDown coins={Object.keys(menu)} setVal={setVal1} />=
       <span className="output">
-        {num*(menu[val2].value/menu[val1].value)}
-        </span>
+        {num * (menu[val2].value / menu[val1].value)}
+      </span>
       <DropDown coins={Object.keys(menu)} setVal={setVal2} />
     </div>
   );

@@ -1,0 +1,14 @@
+.select{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+}
+.result{
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 3px;
+    text-align: center;
+    padding: 5px;
+}
+.div{
+    margin: 10px;
+}
