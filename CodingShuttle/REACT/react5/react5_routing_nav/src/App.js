@@ -40,7 +40,7 @@ function App() {
       </Routes>
       currentLocation : {currLocation.pathname}
     </div>
-  );
+  )
 }
 
 export default App;
