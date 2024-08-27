@@ -14,8 +14,7 @@ function Home() {
     <div>
       <button>
           <Link
-            to="/Nav"
-            element={<Nav />}>
+            to="/Nav">
             Nav
           </Link>
       </button>

@@ -9,7 +9,6 @@ function Projects() {
         Name : {params.userId}
        </div>
        <div>Project : {params.project}</div>
-
        </>
   )
 }

@@ -12,7 +12,7 @@ import Cards from "./components/Cards";
 function App() {
   return (
     <div>
-      <button><Link to="/" element={<Home/>}>Home</Link></button>
+      <button><Link to="/">Home</Link></button>
       <Routes>
         <Route path="/" element={<Home />} />
           <Route element={<Login />}>

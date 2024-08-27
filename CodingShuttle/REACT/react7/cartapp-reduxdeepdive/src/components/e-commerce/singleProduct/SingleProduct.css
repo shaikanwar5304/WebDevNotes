@@ -1,0 +1,16 @@
+.SingleProduct {
+  border: 2px solid black;
+  border-radius: 8px;
+}
+img {
+  width: 100%;
+}
+.productInfo {
+}
+.cartInfo {
+  display: flex;
+  justify-content: center;
+}
+.cartInfo button {
+
+}
