@@ -1,0 +1,7 @@
+javascript is single threaded language 
+if any asynchronous task is to be performed then it assigns the task to operating system threads
+
+
+"dependencies": {
+    "nodemon": "^3.1.4"
+  } #the ^ denotes when we update the dependancies it searches for any update for it

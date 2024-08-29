@@ -1,0 +1,11 @@
+to remove any folder or file
+->Remove-Item -Path .\folder_name or file_name
+->npm i #for installing dependancies
+->npm i nodemon #for installing nodemon
+->npm init #to start new project
+->npm uninstall package_name
+->rm -rf <name> # to delete any folder or file
+->npm i -g nodemon # for globally installing
+
+#for installing devDependencies
+->npm i -D nodemon
