@@ -6,11 +6,11 @@ const signupController = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     if (!email || !password || !name) {
-      return res.send(error(400, "all fields are required"));
+      return res.send(error(400, req.username, "all fields are required"));
     }
     const oldUser = await User.findOne({ email });
     if (oldUser) {
-      return res.send(error(400, "User is already registered"));
+      return res.send(error(400, req.username, "Email is already registered"));
     }
     const hashedPassword = await bcrypt.hash(password, 10); //to hash the password where 10 is salt
     const user = await User.create({
@@ -18,40 +18,48 @@ const signupController = async (req, res) => {
       email,
       password: hashedPassword,
     });
-    return res.send(success(201, { user }));
-  } catch (error) {
-    console.log(error);
+    return res.send(success(200, req.username, { user }));
+  } catch (err) {
+    return res.send(error(400, req.username, err.message));
   }
 };
 
 const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
+    //checking if the email and password are provided
     if (!email || !password) {
-      return res.send(error(400, "all fields are required"));
+      return res.send(
+        error(400, req.username, "both email and password are required")
+      );
     }
     const user = await User.findOne({ email }).select("+password");
+    //checking if the email is registered
     if (!user) {
-      return res.send(error(400, "User not found"));
+      return res.send(error(400, req.username, "Email not registered"));
     }
     const matched = await bcrypt.compare(password, user.password);
+    //checking if the password is correct
     if (!matched) {
-      return res.send(error(401, "Incorrect password"));
+      return res.send(error(400, req.username, "Incorrect password"));
     }
+    //if the email and password are correct, then generate the access token and refresh token
     const accessToken = generateAccessToken({
       _id: user._id,
     });
     const refreshToken = generateRefreshToken({
       _id: user._id,
     });
+    //setting the refresh token in the cookie
     res.cookie("jwt", refreshToken, {
-      httpOnly: true,
+      //setting the refresh token in the cookie
+      httpOnly: true, //only accessible by the server
       secure: true,
     });
-
-    return res.send(success(201, accessToken));
+    //sending the access token in the response
+    return res.send(success(200, req.username, accessToken));
   } catch (err) {
-    return res.send(error(400, err));
+    return res.send(error(400, req.username, err.message));
   }
 };
 
@@ -61,21 +69,22 @@ const logoutController = async (req, res) => {
       httpOnly: true,
       secure: true,
     });
-    return res.send(success(200, "user logged out"));
+    return res.send(success(200, req.username, "user logged out"));
   } catch (e) {
-    return res.send(error(400, e.message));
+    return res.send(error(400, req.username, e.message));
   }
 };
 
 //this api will check the refreshToken validity and generate a new access token
 const refreshAccessTokenController = async (req, res) => {
-  const cookies = req.cookies;
-  const refreshToken = cookies.jwt;
-  if (!refreshToken) {
-    return res.send(error(401, "Refresh token in cookie is required"));
-  }
-
   try {
+    const cookies = req.cookies;
+    const refreshToken = cookies.jwt;
+    if (!refreshToken) {
+      return res.send(
+        error(400, req.username, "Refresh token in cookie is required")
+      );
+    }
     const decoded = jwt.verify(
       //it throws an error if the token is invalid
       refreshToken,
@@ -83,26 +92,24 @@ const refreshAccessTokenController = async (req, res) => {
     );
     const _id = decoded._id;
     const accessToken = generateAccessToken({ _id });
-    return res.send(success(201, { accessToken }));
+    return res.send(success(200, req.username, { accessToken }));
   } catch (err) {
-    return res.send(error(401, "Invalid REFRESH TOKEN"));
+    return res.send(error(400, req.username, err.message));
   }
 };
 
 //internal functions
 const generateAccessToken = (data) => {
   const token = jwt.sign(data, process.env.ACCESS_TOKEN_PRIVATE_KEY, {
-    expiresIn: "1d",
+    expiresIn: "30s",
   });
-  console.log(token);
   return token;
 };
 
 const generateRefreshToken = (data) => {
   const token = jwt.sign(data, process.env.REFRESH_TOKEN_PRIVATE_KEY, {
-    expiresIn: "1y",
+    expiresIn: "60s",
   });
-  console.log(token);
   return token;
 };
 

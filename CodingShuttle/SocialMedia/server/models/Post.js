@@ -17,7 +17,9 @@ const postSchema = mongoose.Schema({
   likes: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
+      ref: "user", //by using ref we are telling mongoose that this field is related to the user model
+      //helpful in populating the data i.e when we want to get the user details of the likes
+      //by using .populate("likes") in the query
     },
   ],
 });

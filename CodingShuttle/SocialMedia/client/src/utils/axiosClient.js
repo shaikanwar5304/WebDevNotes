@@ -22,17 +22,17 @@ axiosClient.interceptors.response.use(async (response) => {
     return data;
   }
   const originalRequest = response.config;
-  const error = data.error;
+  const error = data.message;
   const statusCode = data.statusCode;
   if (
     //when refresh token expires send user to login page
-    statusCode == 401 &&
     originalRequest.url === `/auth/refresh`
   ) {
     removeItem(KEY_ACCESS_TOKEN);
     window.location.replace("/login", "_self");
   }
   if (statusCode == 401) {
+    console.log("calling refresh token");
     const response = await axiosClient.get("/auth/refresh");
     if (response.status === "ok") {
       setItem(KEY_ACCESS_TOKEN, response.result.accessToken);

@@ -11,11 +11,11 @@ function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const result = await axiosClient.post("/auth/login", {
+      const res = await axiosClient.post("/auth/login", {
         email,
         password,
       });
-      setItem(KEY_ACCESS_TOKEN, result.result);
+      setItem(KEY_ACCESS_TOKEN, res.result);
       navigate("/");
     } catch (error) {
       console.log(error);

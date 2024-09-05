@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const postsController = require("../controllers/postsController");
 const requireUser = require("../middlewares/requireUser");
-
-router.get("/all", requireUser, postsController.getAllPostsController); //route, middleware, controller
+//route, middleware, controller
 router.post("/", requireUser, postsController.createPostController);
-router.post("/like", requireUser, postsController.likeAndUnlikePost);
-router.put("/", requireUser, postsController.updatePostController);
 router.delete("/", requireUser, postsController.deletePost);
+router.put("/", requireUser, postsController.updatePostController);
+router.post("/like", requireUser, postsController.likeAndUnlikePost);
+router.get("/:id", requireUser, postsController.getUserPosts);
 module.exports = router;

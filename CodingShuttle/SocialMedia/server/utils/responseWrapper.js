@@ -1,14 +1,16 @@
-const success = (statusCode, result) => {
+const success = (statusCode, username, result) => {
   return {
     status: "ok",
     statusCode,
+    username,
     result,
   };
 };
-const error = (statusCode, message) => {
+const error = (statusCode, username, message) => {
   return {
     status: "error",
     statusCode,
+    username,
     message,
   };
 };
