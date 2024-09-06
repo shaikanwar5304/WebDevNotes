@@ -1,22 +1,14 @@
-import React, { useEffect } from "react";
-import { axiosClient } from "../../utils/axiosClient";
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 function Home() {
-  useEffect(() => {
-    fetchData();
-  }, []);
-  async function fetchData() {
-    var response;
-    try {
-      response = await axiosClient.get("/user/getMyPosts");
-    } catch (error) {
-      console.log(error);
-    }
-    console.log("got the response", response);
-  }
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <Navbar />
+      <div className="outlet" style={{ marginTop: "60px" }}>
+        <Outlet />
+      </div>
+    </>
   );
 }
 
