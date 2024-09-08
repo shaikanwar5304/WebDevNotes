@@ -3,24 +3,22 @@ import "./Navbar.scss";
 import Avatar from "../avatar/Avatar";
 import { useNavigate } from "react-router-dom";
 import { IoIosLogOut } from "react-icons/io";
-import LoadingBar from "react-top-loading-bar";
+import { useDispatch, useSelector } from "react-redux";
+import { axiosClient } from "../../utils/axiosClient";
+import { KEY_ACCESS_TOKEN, removeItem } from "../../utils/localStorageManager";
+import { setLoading } from "../../redux/slices/appConfigSlice";
 function Navbar() {
   const navigate = useNavigate();
-  const loadingref = useRef();
-  const [loading, setLoading] = useState(false);
-  function toggleLoadingBar() {
-    if (loading) {
-      setLoading(false);
-      loadingref.current.complete();
-    } else {
-      setLoading(true);
-      loadingref.current.continuousStart();
-    }
+  const myProfile = useSelector((state) => state.appConfigReducer.myProfile);
+  async function handleLogout() {
+    try {
+      await axiosClient.post("/auth/logout");
+      removeItem(KEY_ACCESS_TOKEN);
+      navigate("/login");
+    } catch (e) {}
   }
-
   return (
     <div className="Navbar">
-      <LoadingBar color="#5f9fff" ref={loadingref} />
       <div className="container">
         <h2
           className="banner hover-link"
@@ -34,12 +32,12 @@ function Navbar() {
           <div
             className="profile"
             onClick={() => {
-              navigate("/profile/adfsdf");
+              navigate(`/profile/${myProfile?._id}`);
             }}
           >
-            <Avatar />
+            <Avatar src={myProfile?.avatar?.url} />
           </div>
-          <div className="logout hover-link" onClick={toggleLoadingBar}>
+          <div className="logout hover-link" onClick={handleLogout}>
             <IoIosLogOut />
           </div>
         </div>

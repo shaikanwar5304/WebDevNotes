@@ -5,6 +5,10 @@ import {
   removeItem,
   setItem,
 } from "./localStorageManager";
+
+import store from "../redux/store";
+import { TOAST_FAILURE } from "../App";
+import { setLoading, showToast } from "../redux/slices/appConfigSlice";
 export const axiosClient = axios.create({
   baseURL: process.env.REACT_APP_SERVER_BASE_URL,
   withCredentials: true,
@@ -13,17 +17,25 @@ export const axiosClient = axios.create({
 axiosClient.interceptors.request.use((request) => {
   const accessToken = getItem(KEY_ACCESS_TOKEN);
   request.headers["Authorization"] = `Bearer ${accessToken}`;
+  store.dispatch(setLoading(true));
   return request;
 });
 
 axiosClient.interceptors.response.use(async (response) => {
   const data = response.data;
+  store.dispatch(setLoading(false));
   if (data.status === "ok") {
     return data;
   }
   const originalRequest = response.config;
   const error = data.message;
   const statusCode = data.statusCode;
+  store.dispatch(
+    showToast({
+      type: TOAST_FAILURE,
+      message: error,
+    })
+  );
   if (
     //when refresh token expires send user to login page
     originalRequest.url === `/auth/refresh`

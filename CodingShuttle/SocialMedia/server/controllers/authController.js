@@ -108,7 +108,7 @@ const generateAccessToken = (data) => {
 
 const generateRefreshToken = (data) => {
   const token = jwt.sign(data, process.env.REFRESH_TOKEN_PRIVATE_KEY, {
-    expiresIn: "60s",
+    expiresIn: "600s",
   });
   return token;
 };

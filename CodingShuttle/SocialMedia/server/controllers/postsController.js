@@ -2,18 +2,28 @@ const { success } = require("../utils/responseWrapper");
 const { error } = require("../utils/responseWrapper");
 const User = require("../models/User");
 const Post = require("../models/Post");
-
+const cloudinary = require("cloudinary").v2;
+const { mapPostOutput } = require("../utils/Utils");
 const createPostController = async (req, res) => {
   try {
-    const { caption } = req.body;
-    if (!caption) {
-      return res.send(error(400, req.username, "caption is required"));
+    const { caption, postImg } = req.body;
+    if (!caption || !postImg) {
+      return res.send(
+        error(400, req.username, "caption and image are required")
+      );
     }
+    const cloudImg = await cloudinary.uploader.upload(postImg, {
+      folder: "PostImg",
+    });
     const owner = req._id;
     const user = await User.findById(req._id);
     const post = await Post.create({
       owner,
       caption,
+      image: {
+        publicId: cloudImg.public_id,
+        url: cloudImg.url,
+      },
     });
     user.posts.push(post._id);
     await user.save();
@@ -27,7 +37,7 @@ const likeAndUnlikePost = async (req, res) => {
   try {
     const { postId } = req.body;
     const curUserId = req._id;
-    const post = await Post.findById(postId);
+    const post = await Post.findById(postId).populate("owner");
     if (!post) {
       return res.send(error(404, req.username, "post not found"));
     }
@@ -41,7 +51,9 @@ const likeAndUnlikePost = async (req, res) => {
       msg = "post Liked";
     }
     await post.save();
-    return res.send(success(200, req.username, msg));
+    return res.send(
+      success(200, req.username, { post: mapPostOutput(post, req._id) })
+    );
   } catch (err) {
     res.send(error(400, req.username, err.message));
   }
