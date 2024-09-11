@@ -1,0 +1,22 @@
+.container {
+  padding: 20px;
+  .info {
+    padding: 20px;
+    p {
+      margin-top: 10px;
+    }
+  }
+  .content {
+    gap: 15px;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 540px) {
+  .collection2 {
+    .content {
+      margin-block: 20px;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
