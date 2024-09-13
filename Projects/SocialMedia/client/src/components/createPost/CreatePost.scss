@@ -1,0 +1,49 @@
+.CreatePost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid rgb(78, 78, 78);
+  border-radius: 5px;
+  gap: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  .label {
+    min-width: 100px;
+    text-align: center;
+    img {
+      border: 5px dashed var(--border-color);
+      width: 90%;
+      max-height: 400px;
+    }
+  }
+
+  .inputImgBox {
+    display: none;
+  }
+  .rightOfCreatePost {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    width: 80%;
+    padding: 10px;
+  }
+  textarea {
+    min-width: 85%;
+    min-height: 4rem;
+    max-height: 6rem;
+    max-width: 95%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    line-height: 1.2;
+    color: var(rgb(105, 105, 105));
+    border: 3px solid var(--border-color);
+    letter-spacing: 1px;
+    border-radius: 5px;
+    outline: none;
+  }
+}

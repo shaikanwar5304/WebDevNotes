@@ -1,0 +1,73 @@
+.Post {
+  border: 3px solid rgb(78, 78, 78);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 15px;
+    .more {
+      font-size: 1.5rem;
+      position: relative;
+      .options {
+        position: absolute;
+        background-color: #acacac;
+        font-size: 1rem;
+        top: 16px;
+        left: -17px;
+        color: white;
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+        border-radius: 5px;
+        overflow: hidden;
+        div {
+          width: 100%;
+          padding: 5px;
+          text-align: center;
+        }
+        div:hover {
+          background-color: #8b8b8b;
+          color: white;
+        }
+      }
+      .options-hidden {
+        display: none;
+      }
+    }
+    div {
+      cursor: pointer;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+  .content {
+    img {
+      width: 100%;
+      border-top: 2px solid rgb(78, 78, 78);
+      border-bottom: 2px solid rgb(78, 78, 78);
+    }
+  }
+  .footer {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .like {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .time-ago {
+      color: #acacac;
+      font-size: 1rem;
+    }
+  }
+}
