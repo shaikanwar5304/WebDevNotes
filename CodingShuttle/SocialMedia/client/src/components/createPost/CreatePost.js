@@ -45,7 +45,7 @@ function CreatePost() {
   return (
     <div className="CreatePost">
       <div className="left-part">
-        <Avatar src={myProfile?.avatar.url} />
+        <Avatar src={myProfile?.avatar?.url} />
       </div>
       <div className="right-part">
         <div className="img-container">
