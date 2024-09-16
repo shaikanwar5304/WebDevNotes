@@ -1,0 +1,41 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 10px;
+  .item-img {
+    width: 75px;
+    aspect-ratio: 1/1;
+    img {
+      width: 100%;
+    }
+  }
+  .item-info {
+    padding: 10px;
+    div {
+      margin-top: 10px;
+    }
+    .quatity-selector {
+      padding: 0;
+      border: 1px solid var(--secondary-text-color);
+      width: fit-content;
+      height: fit-content;
+      background-color: #e2e2e2;
+    }
+    .quantity {
+      padding-inline: 10px;
+    }
+    .btn {
+      padding: 4px 8px;
+      display: inline-block;
+      cursor: pointer;
+      &:hover {
+        background-color: #c4c4c4;
+      }
+    }
+  }
+
+  .item-remove {
+    font-size: 1.2rem;
+  }
+}
