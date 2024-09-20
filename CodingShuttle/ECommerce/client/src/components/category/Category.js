@@ -1,10 +1,19 @@
 import React from "react";
 import "./Category.scss";
-function Category() {
+import { useNavigate } from "react-router-dom";
+function Category({ category }) {
+  console.log(category);
+  const navigate = useNavigate();
   return (
-    <div className="Category">
+    <div
+      className="Category"
+      style={{
+        backgroundImage: `url(${category.attributes.image?.data.attributes.url})`,
+      }}
+      onClick={() => navigate(`/category/${category.attributes.key}`)}
+    >
       <div className="content flex-center">
-        <h3>Comics</h3>
+        <h3>{category.attributes.title}</h3>
       </div>
     </div>
   );
