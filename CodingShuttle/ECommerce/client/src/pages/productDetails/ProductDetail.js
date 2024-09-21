@@ -3,10 +3,16 @@ import dummyImg from "../../assets/naruto.jpeg";
 import "./ProductDetail.scss";
 import { axiosClient } from "../../utils/axiosClient";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../redux/cartSlice";
 
 function ProductDetail() {
   const params = useParams();
   const [product, setProduct] = useState(null);
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cartSlice.cart);
+  const quantity =
+    cart.find((item) => item.key === params.productId)?.quantity || 0;
   async function fetchData() {
     const productResponse = await axiosClient.get(
       `/products?filters[key][$eq]=${params.productId}&populate=image`
@@ -38,12 +44,27 @@ function ProductDetail() {
             <p className="description">{product?.attributes.description}</p>
             <div className="cart-options">
               <div className="quatity-selector">
-                <span className="btn decrement">-</span>
-                <span className="quantity">3</span>
-                <span className="btn increment">+</span>
+                <span
+                  className="btn decrement"
+                  onClick={() => dispatch(removeFromCart(product))}
+                >
+                  -
+                </span>
+                <span className="quantity">{quantity}</span>
+                <span
+                  className="btn increment"
+                  onClick={() => dispatch(addToCart(product))}
+                >
+                  +
+                </span>
               </div>
             </div>
-            <button className="btn-primary add-to-cart">Add to Cart</button>
+            <button
+              className="btn-primary add-to-cart"
+              onClick={() => dispatch(addToCart(product))}
+            >
+              Add to Cart
+            </button>
             <div className="return-policy">
               <ul>
                 <li>
