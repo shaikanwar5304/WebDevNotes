@@ -39,7 +39,7 @@ function Home() {
           <h2 className="heading">Our Top Pics</h2>
           <p className="subheading">All New Designs, Same Old Details</p>
         </div>
-        <div className="content flex-center">
+        <div className="content ">
           {topProducts?.map((product) => (
             <Product key={product.id} product={product} />
           ))}

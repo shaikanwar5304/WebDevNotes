@@ -2,7 +2,11 @@ import React from "react";
 import itemImg from "../../assets/naruto.jpeg";
 import { FaRegWindowClose } from "react-icons/fa";
 import "./CartItem.scss";
-import { removeFromCart, addToCart } from "../../redux/cartSlice";
+import {
+  removeFromCart,
+  addToCart,
+  removeItemFromCart,
+} from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
 function CartItem({ cart }) {
   const dispatch = useDispatch();
@@ -36,7 +40,10 @@ function CartItem({ cart }) {
           </div>
         </div>
       </div>
-      <div className="item-remove">
+      <div
+        className="item-remove"
+        onClick={() => dispatch(removeItemFromCart(cart))}
+      >
         <FaRegWindowClose />
       </div>
     </div>

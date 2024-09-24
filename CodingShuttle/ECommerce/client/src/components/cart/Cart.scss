@@ -54,13 +54,16 @@
       }
       .checkout-info {
         padding: 5px 20px;
+        flex-direction: column;
         border-top: 1px solid #ddd;
         .total-amount {
           justify-content: space-between;
           padding: 15px;
+          gap: 10px;
         }
         .checkout {
           text-align: center;
+          width: fit-content;
         }
       }
     }

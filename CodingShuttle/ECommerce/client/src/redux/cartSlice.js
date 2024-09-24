@@ -33,7 +33,38 @@ const cartSlice = createSlice({
         state.cart[index].quantity -= 1;
       }
     },
+    removeItemFromCart: (state, action) => {
+      const curKey = action.payload?.attributes?.key || action.payload.key;
+      state.cart = state.cart.filter((item) => item.key !== curKey);
+    },
+    resetCart: (state, action) => {
+      console.log("resettting cart");
+      state.cart = [];
+    },
+    addNItems: (state, action) => {
+      const curKey = action.payload?.attributes?.key || action.payload.key;
+      state.cart = state.cart.filter((item) => item.key !== curKey);
+      const e = action.payload?.attributes;
+      const curItem = e
+        ? {
+            title: e.title,
+            key: e.key,
+            price: e.price,
+            image: e.image.data.attributes.url,
+          }
+        : action.payload;
+      console.log("curItem", curItem);
+      if (action.payload.quantity > 0) {
+        state.cart.push({ ...curItem, quantity: action.payload.quantity });
+      }
+    },
   },
 });
 export default cartSlice.reducer;
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  resetCart,
+  removeItemFromCart,
+  addNItems,
+} = cartSlice.actions;

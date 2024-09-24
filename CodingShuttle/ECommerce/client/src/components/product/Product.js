@@ -10,7 +10,7 @@ function Product({ product }) {
       className="Product"
       onClick={() => navigate(`/products/${product?.attributes?.key}`)}
     >
-      <div className="img-container">
+      <div className="img-container flex-center">
         <img
           src={product?.attributes?.image?.data.attributes.url || naruto}
           alt={product?.attributes?.key}

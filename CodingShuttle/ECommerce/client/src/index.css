@@ -9,7 +9,7 @@
 
 :root {
   --primary-text-color: #222222;
-  --secondary-text-color: #888;
+  --secondary-text-color: #888888;
   --accent-color: #8800c7;
   --white-color: #dddddd;
 }
@@ -30,10 +30,10 @@ a {
   border-radius: 4px;
 }
 .hover-link:hover {
-  background-color: rgba(202, 202, 202, 0.2);
+  color: var(--secondary-text-color);
 }
 .hover-link:active {
-  background-color: rgba(223, 223, 223, 0.3);
+  color: var(--accent-color);
 }
 
 .flex-center {
