@@ -1,9 +1,0 @@
-console.log(Math.round(4.5));//5
-console.log(Math.ceil(4.5));//5
-console.log(Math.floor(4.5));//4
-console.log(Math.random());//(0-1)0.022673377285396867
-console.log(Math.max(5,10,15));//15
-console.log(Math.min(5,10.01,0.68));//0.68
-console.log(Math.pow(3,4));//81
-console.log(Math.sqrt(15));//3.872983346207417
-console.log(Math.PI);//3.141592653589793
