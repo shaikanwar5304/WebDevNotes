@@ -1,6 +1,0 @@
-usually js can only run on a single core of a processor
-cuz it is single threaded
-(it can't use the benefits of having multiple core processor)
-
-while java c++ etc... can split their load to several cores due to their
-multi threaded nature
