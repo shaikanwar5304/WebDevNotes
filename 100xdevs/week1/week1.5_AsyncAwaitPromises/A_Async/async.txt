@@ -1,0 +1,3 @@
+Async functions vs sync functions:
+sync func means one after other or sequential execution of code
+async func means parallel execution of code
