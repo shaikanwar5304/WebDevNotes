@@ -1,0 +1,4 @@
+// IMPORTANCE OF CALLBACKS FOR ASYNC FUNCTIONS
+we know that js thread will think about asynch tasks (put them in a call stack) and execute them after the synchronous tasks
+// so the problem is if we want the info or data to perform a task that will be obtained after the execution of async functions
+for that we can use call backs, after completion of that async tasks we will pass the data into that callback fn(data) and then get the work done
