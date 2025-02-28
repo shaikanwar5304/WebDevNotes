@@ -1,0 +1,12 @@
+return new Promise((res, rej)=>{
+        console.log("inside promise");// upto this point the promise is not async
+        setTimeout(()=>{
+            res("hello "+name)
+        }, 1000)
+    })
+the promise class takes a function, which contains the async work to be done after the work done it will resolves or rejects according to work done or not
+resolve and reject are two functions are given inside the Promise class to our function
+if our function completes the task it will use resolve method given by Promise
+else reject
+the data or result if available by the resolve, and the error message by the reject will be carried out to developer
+he will then retrieves data by .then and catches the error if any by .catch 
