@@ -1,0 +1,5 @@
+Protocol: A standard set of rules for communication between devices.
+HTTP (HyperText Transfer Protocol): A protocol that defines how web browsers and web servers communicate.
+Think of it as instructions both sides follow to request and deliver web content (like HTML, CSS, images).
+HTTP is one type of protocol used specifically for transferring hypertext (linked documents) over the internet.
+HTTP used for communication for frontend and backend in our case

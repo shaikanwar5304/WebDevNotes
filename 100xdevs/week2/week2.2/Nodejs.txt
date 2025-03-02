@@ -1,0 +1,9 @@
+Back in 2010, building a web app meant using JavaScript for the frontend (running in browsers via engines like V8) and languages 
+like Java or Go for the backend. JavaScript was limited to browsers—it couldn’t run in a terminal or on a server like Java could. 
+Some developers thought, “Why not create a runtime to let JavaScript run outside browsers and handle backend tasks too?” So, they 
+built Node.js, a runtime for JavaScript, by adding features like readFile for file access and HTTP server capabilities. This 
+allowed developers to use JavaScript for both frontend and backend, making it a full-stack language
+
+
+Nodejs is simiilar to JRe as both are runtime environments for js and java respectively.
+The end goal we use Nodejs for is To create a HTTP server

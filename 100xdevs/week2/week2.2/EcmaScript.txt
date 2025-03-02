@@ -1,0 +1,10 @@
+ECMAScript is a standard that defines how JavaScript works. Think of it as a class-object relationship: ECMAScript is like a class 
+that regularly brings updates and new standards, and JavaScript, built on those standards, is like an object that adopts these 
+changes. Since browsers use JavaScript engines to run code, they also update to support the new features.
+For example, both Chrome and Internet Explorer existed around 2010, but Chrome quickly adopted ECMAScript updates and new 
+features, while Internet Explorer lagged behind and eventually fell out of favor. Back then, JavaScript only had var for variable 
+declarations and no Promises. When ECMAScript introduced updates like let, const, and Promises, arrow functions JavaScript gained these features, 
+and browsers worked to keep up by updating their engines.
+-> Another point to remember is javascript not only implements ECMAScript but also beyond that like DOM, setTimeout, fs.readFile which is not sponsered by 
+ECMAScript but javascript adopted that.
+-> v8(c), spidermonkey(c + rust) etc... are the engines developed by chrome and firefox to compile js, 
