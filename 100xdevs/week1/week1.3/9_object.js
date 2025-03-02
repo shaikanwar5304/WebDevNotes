@@ -11,4 +11,7 @@ console.log(obj.hasOwnProperty("key2"));//true
 let obj2 = {
   key3: "value1"
 }
+// appending obj2 to obj
 console.log(Object.assign(obj, obj2));//{ key1: 'value1', key2: { key21: 'value21' }, key3: 'value1' }
+console.log(obj);//{ key1: 'value1', key2: { key21: 'value21' }, key3: 'value1' }
+console.log(obj2);//{ key3: 'value1' }

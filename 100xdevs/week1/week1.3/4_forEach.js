@@ -9,7 +9,7 @@ arr.forEach(function(val,ind,arr){
 2 [ 1, 2, 3, 4 ]
 3 [ 1, 2, 3 ] 
 */
-//forEach is not effected by pushing
+//no of iterations in forEach is not effected by pushing
 arr = [1, 2, 3];
 arr.forEach(function (val, ind, arr) {
   console.log(val, arr);
@@ -20,3 +20,5 @@ arr.forEach(function (val, ind, arr) {
 2 [ 1, 2, 3, 4 ]
 3 [ 1, 2, 3, 4, 5 ]
 */
+console.log(arr);
+//[ 1, 2, 3, 4, 5, 6 ]

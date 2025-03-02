@@ -9,5 +9,6 @@ console.log('end');
 
 //python:
 //the above code will also not considered in case of error in function
+//i.e if there is an error in function in any line the whole function will not be executed
 //js:
-//the code below the error will only effected
+//in case of js for functions if there is an error in function the code below the error will not be executed
