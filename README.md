@@ -1,2 +1,2 @@
-![CodingShuttle](https://github.com/user-attachments/assets/92e8bfda-6973-4e77-bb8e-fae5a9cd9098)
+[CodingShuttle](https://github.com/user-attachments/assets/e9c5f34d-8cd1-41a1-93b8-9ff87850ecfe)
 [Certificate](https://github.com/user-attachments/files/21973980/CodingShuttle.pdf)
